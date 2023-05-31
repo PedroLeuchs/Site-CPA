@@ -1,0 +1,41 @@
+nav {
+  background-color: rgb(243, 234, 234);
+  width: 100vw;
+  height: 7em;
+  justify-content: center;
+  display: flex;
+  position: fixed;
+  z-index: 999;
+}
+.container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.logocpa {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+}
+.container a {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  width: 65%;
+  font-size: 22px;
+  text-align: center;
+}
+.links a {
+  text-decoration: none;
+  color: black;
+}

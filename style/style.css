@@ -1,0 +1,178 @@
+* {
+  --rhino-color: #243746;
+  --bg-color: white;
+  --red-ribbon-color: #dc0b44;
+  --white-color: white;
+  --iron-color: #cecfd0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--rhino-color);
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.noticiasContainer {
+  width: 100%;
+}
+
+.cardMembros {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 90vw;
+  height: 50rem;
+
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+.membrosCPA {
+  width: 20rem;
+  height: 30rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 3px solid var(--rhino-color);
+  background-color: var(--iron-color);
+  font-size: 22px;
+
+  border-radius: 15px;
+}
+.membrosCPA button {
+  margin-bottom: 1em;
+  border-radius: 15px;
+  width: 10em;
+  height: 2.5em;
+  font-size: 16px;
+  color: white;
+  border: 2px solid var(--rhino-color);
+  background-color: var(--red-ribbon-color);
+}
+
+.membrosCPA img {
+  width: 99%;
+  height: 70%;
+  border: 3px solid var(--rhino-color);
+  border-radius: 15px;
+}
+
+/* parte 2 */
+.cardInfo {
+  width: 90vw;
+  min-height: 250em;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+  align-items: center;
+}
+.membrosInfo {
+  width: 40rem;
+  height: 30rem;
+  border-radius: 25px;
+
+  border: 2px solid var(--rhino-color);
+  background-color: var(--iron-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-contet: space-around;
+}
+.top img {
+  width: 20em;
+  height: 20em;
+  border: 3px solid var(--rhino-color);
+  border-radius: 15px;
+
+  position: relative;
+  top: -30%;
+  left: -10%;
+  flex: 1;
+}
+.top {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info {
+  position: relative;
+  left: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100%;
+  width: 90%;
+  flex: 3;
+}
+.info :nth-child(2) {
+  font-size: 20px;
+  font-weight: 700;
+}
+.nome {
+  font-size: 26px;
+  text-align: center;
+}
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 60%;
+}
+.bottom p {
+  padding: 2em;
+}
+.buttons {
+  width: 100%;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.buttons button {
+  margin-bottom: 1em;
+  border-radius: 25px;
+  width: 10em;
+  height: 2.5em;
+  font-size: 16px;
+  color: white;
+  border: 2px solid var(--rhino-color);
+  background-color: var(--red-ribbon-color);
+}
+.buttons :nth-child(1) {
+  background-color: var(--rhino-color);
+}
+html {
+  scroll-behavior: smooth;
+}
+#membro1,
+#membro2,
+#membro3,
+#membro4 {
+  scroll-behavior: smooth;
+}
