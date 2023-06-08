@@ -10,8 +10,7 @@
 }
 body {
   width: 100%;
-  min-height: 1050vh;
-
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,18 +33,9 @@ main {
 .cardMembros {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
   gap: 2em;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 90vw;
-  height: 60rem;
-
-  margin-top: 10rem;
-
+  width: 100%;
   transform: scale(0.9);
 }
 
@@ -66,7 +56,13 @@ main {
 }
 .membrosCPA:hover {
   transform: scale(1.1);
+  transition: ease-in 0.2s;
 }
+
+.membrosCPA:not(:hover) {
+  transition: ease-in 0.2s;
+}
+
 .membrosCPA button {
   margin-bottom: 1em;
   border-radius: 15px;
@@ -74,8 +70,16 @@ main {
   height: 2.5em;
   font-size: 16px;
   color: white;
+  cursor: pointer;
   border: 2px solid var(--rhino-color);
   background-color: var(--red-ribbon-color);
+}
+
+.membrosCPA button:hover{
+  color: var(--iron-color);
+  background-color: var(--rhino-color);
+  transition: background-color 0.5s;
+
 }
 
 .membrosCPA img {
