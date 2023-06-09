@@ -111,7 +111,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-contet: space-around;
+  justify-content: space-around;
 }
 .top img {
   width: 20em;
