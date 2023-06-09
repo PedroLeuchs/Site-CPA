@@ -1,3 +1,4 @@
+// pega um elemento pelo id e scrolla até ele
 function scrollToElement(elementId) {
     const element = document.getElementById(elementId);
     if (element) {
@@ -5,6 +6,7 @@ function scrollToElement(elementId) {
     }
   }
 
+// vetor com as informações dos membros da CPA para os primeiros cards
 const membersData = [
     {
         imgSrc: "./assets/dani.png",
@@ -68,6 +70,7 @@ const membersData = [
     }
 ];
 
+// vetor com as informações de cada membro da CPA para os cards de cada um
 const cardObjects = [
     {
         nome: 'Daniele Wolfart',
@@ -141,7 +144,7 @@ const cardObjects = [
     }
 ];
 
-
+// Função para criar os primeiros cards dos membros
 function createMemberElement(member) {
 
     const cardMembros = document.querySelector("#cardMembros");
@@ -169,12 +172,16 @@ function createMemberElement(member) {
 
 }
 
+// função para rodar a função de criar os cards dos membros
+// (para cada membro do array, cria um card)
 function createMemberCards() {
     membersData.forEach((member) => {
         createMemberElement(member);
     });
 }
 
+// função para criar os cards dos membros com mais informações
+// (para cada membro do array, cria um card com mais informações)
 function createCardElement(card) {
 
     const cardInfo = document.querySelector(".cardInfo");
@@ -231,20 +238,18 @@ function createCardElement(card) {
     bottom.appendChild(buttons);
     buttons.appendChild(button1);
     buttons.appendChild(button2);
-
 }
 
+// função para rodar a função de criar os cards de cada membro específico
 function createCard() {
     cardObjects.forEach((card) => {
         createCardElement(card);
     });
 }
 
+// função para renderizar os cards;
 document.addEventListener("DOMContentLoaded", function () {
     createCard();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
     createMemberCards();
 });
 
