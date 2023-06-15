@@ -2,9 +2,9 @@
 function scrollToElement(elementId) {
     const element = document.getElementById(elementId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth' });
     }
-  }
+}
 
 // vetor com as informações dos membros da CPA para os primeiros cards
 const membersData = [
@@ -254,3 +254,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+function toggleMenu(x) {
+    x.classList.toggle("change");
+}
