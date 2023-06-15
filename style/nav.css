@@ -16,24 +16,19 @@ nav {
 }
 
 .logocpa {
-  width: 35%;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 3em;
+  justify-content: flex-start;
 }
 
-.container a {
-  width: auto;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.logocpa img {
+  width: 10em;
 }
 
 .links {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 0.5em;
   width: 65%;
   font-size: 22px;

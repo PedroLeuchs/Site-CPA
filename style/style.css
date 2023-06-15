@@ -232,3 +232,65 @@ main {
   
   }
 }
+
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.scroll-to-top:before {
+  content: "\2191"; /* Unicode character for an upward arrow */
+  font-size: 20px;
+}
+
+/* Show the arrow when the user has scrolled 300px down */
+@media screen and (min-height: 300px) {
+  .scroll-to-top {
+    display: block;
+  }
+}
+
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:before {
+  content: "\2191"; /* Unicode character for an upward arrow */
+  font-size: 24px;
+}
+
+.scroll-to-top:hover {
+  background-color: #555;
+}
+
+/* Show the arrow when the user has scrolled 300px down */
+@media screen and (min-height: 300px) {
+  .scroll-to-top {
+    display: block;
+  }
+}
