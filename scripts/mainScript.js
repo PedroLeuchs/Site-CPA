@@ -256,6 +256,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function toggleMenu(x) {
     x.classList.toggle("change");
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('open');
 }
 
 function scrollToTop() {
@@ -263,4 +265,4 @@ function scrollToTop() {
         top: 0,
         behavior: "smooth",
     });
-  }
+}
