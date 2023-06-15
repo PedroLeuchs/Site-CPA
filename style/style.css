@@ -29,8 +29,23 @@ main {
 
 .noticiasContainer {
   width: 100%;
+  top: 20%;
 }
 
+.sobre {
+  display: flex;
+  width: 55%;
+  height: 11%;
+  margin-top: 15%;
+  background-color: #cecfd0;
+  font-size: 120%;
+  padding: 4%;
+  border: solid 4px #dc0b44;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  align-items: center;
+  flex-direction: column;
+}
 .cardMembros {
   position: relative;
   display: flex;
