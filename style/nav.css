@@ -17,7 +17,6 @@ nav {
 }
 
 .logocpa {
-  width: 100%;
   display: flex;
   justify-content: flex-start;
 }
@@ -30,15 +29,20 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.5em;
-  width: 65%;
-  font-size: 22px;
+  width: 100%;
+  font-size: 18px;
   text-align: center;
+  height: 100%;
 }
 
 .links a {
   text-decoration: none;
   color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menuIcon {
@@ -76,13 +80,13 @@ nav {
   visibility: hidden;
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 50%;
+  height: 50px;
   background-color: #f1f1f1;
   text-align: center;
   opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease; 
 }
 
 .menu.open {
@@ -92,9 +96,41 @@ nav {
   transform: translateY(0); 
 }
 
-.menu a {
+.menuContainer {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+}
+.menuContainer li {
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--rhino-color);
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menuContainer li:hover {
+  background-color: #3e5363;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.menuContainer a{
+  color: var(--white-color);
   text-decoration: none;
-  color: black;
+}
+
+.menuContainer.open li {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {

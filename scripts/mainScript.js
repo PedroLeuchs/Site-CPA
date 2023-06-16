@@ -266,3 +266,16 @@ function scrollToTop() {
         behavior: "smooth",
     });
 }
+
+const menuIcon = document.querySelector('.menuIcon');
+const menuContainer = document.querySelector('.menuContainer');
+// Add a click event listener to the document
+document.addEventListener('click', function (event) {
+    console.log(event.target);
+    // Check if the clicked element is outside of the menu
+    if (!menuIcon.contains(event.target)) {
+        // Clicked outside of the menu, handle the event here
+        // For example, you can close the menu or perform any other action
+        toggleMenu(menuContainer);
+    }
+});
