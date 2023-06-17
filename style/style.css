@@ -40,6 +40,15 @@ main {
   margin-top: 1em;
 }
 
+.infoMembros {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .membrosCPA {
   width: 300px;
   height: 400px;
@@ -48,11 +57,9 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   border: 3px solid var(--rhino-color);
   background-color: var(--iron-color);
   font-size: 22px;
-
   border-radius: 15px;
 }
 .membrosCPA:hover {
@@ -60,12 +67,7 @@ main {
   transition: ease-in 0.2s;
 }
 
-.membrosCPA:not(:hover) {
-  transition: ease-in 0.2s;
-}
-
 .membrosCPA button {
-  margin-bottom: 1em;
   border-radius: 15px;
   width: 10em;
   height: 2.5em;
@@ -76,25 +78,27 @@ main {
   background-color: var(--red-ribbon-color);
 }
 
-.membrosCPA button:hover{
+.membrosCPA button:hover, .buttons button:hover {
   color: var(--iron-color);
   background-color: var(--rhino-color);
-  transition: background-color 0.5s;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
 
+.membrosCPA:not(:hover), .membrosCPA button:not(:hover), .buttons button:not(:hover) {
+  transition: ease-in 0.2s;
 }
 
 .membrosCPA img {
   width: 100%;
-  height: 70%;
+  min-height: 250px;
   border: 3px solid var(--rhino-color);
   border-radius: 15px;
 }
 
-/* parte 2 */
 .cardInfo {
-  width: 90vw;
+  width: 90%;
   min-height: 600em;
-  
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -104,7 +108,6 @@ main {
   max-width: 700px;
   min-height: 480px;
   border-radius: 25px;
-
   border: 2px solid var(--rhino-color);
   background-color: var(--iron-color);
   display: flex;
@@ -113,11 +116,12 @@ main {
   justify-content: space-around;
 }
 .top img {
-  width: 20em;
-  height: 20em;
+  width: 80%;
+  height: 100%;
+  max-width: 320px;
+  max-height: 320px;
   border: 3px solid var(--rhino-color);
   border-radius: 15px;
-
   position: relative;
   top: -30px;
   left: -30px;
@@ -150,57 +154,64 @@ main {
 .bottom {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-direction: column;
   height: 60%;
+  width: 100%;
+  padding: 1em 0;
+  gap: 1em;
 }
+
 .bottom p {
-  padding: 2em;
+  width: 90%;
 }
+
 .buttons {
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
 .buttons button {
-  margin-bottom: 1em;
   border-radius: 25px;
-  width: 10em;
+  width: 100%;
+  max-width: 150px;
   height: 2.5em;
   font-size: 16px;
   color: white;
   border: 2px solid var(--rhino-color);
   background-color: var(--red-ribbon-color);
 }
-.buttons :nth-child(1) {
-  background-color: var(--rhino-color);
-}
 
 @media (max-width: 768px) {
   .cardMembros {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+
   .membrosCPA {
     width: 200px;
     height: 300px;
   }
+
   .membrosCPA img {
-    width: 100%;
-    border: 3px solid var(--rhino-color);
-    border-radius: 15px;
+    min-height: 200px;
   }
+
   .membrosCPA button {
     width: 8em;
-    height: 2em;
   }
+
   .top {
     flex-direction: column;
   }
+
   .top img {
     top: -20px;
     left: 0;
+
   }
+
   .membrosCPA p {
     font-size: 18px;
   }
@@ -214,20 +225,24 @@ main {
     width: 150px;
     height: 250px;
   }
-  .membrosCPA img {
-    width: 100%;
-    border: 3px solid var(--rhino-color);
-    border-radius: 15px;
-  }
   .membrosCPA button {
     width: 7em;
-    height: 2em;
+    font-size: 14px;
   }
   .membrosCPA p {
     font-size: 16px;
   }
-  .logoBPK {
-    display: none;
+  .bottom p {
+    text-align: center;
+    font-size: 14px;
+  }
+  .top img {
+    width: 60%;
+  }
+  .buttons button {
+    width: 40%;
+    height: 2em;
+    font-size: 14px;
   }
 }
 

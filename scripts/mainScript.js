@@ -23,13 +23,13 @@ const membersData = [
     {
         imgSrc: "../assets/membrosCPA/Liberato.jpg",
         alt: "foto membro CPA",
-        name: "Liberato Brum Júnior",
+        name: "Liberato Brum",
         membroID: "#membro3"
     },
     {
         imgSrc: "../assets/membrosCPA/Leo.jpg",
         alt: "foto membro CPA",
-        name: "Leonardo Garcia Tampelini",
+        name: "Leonardo Garcia",
         membroID: "#membro4"
     },
     {
@@ -53,13 +53,13 @@ const membersData = [
     {
         imgSrc: "../assets/membrosCPA/arthur.jpg",
         alt: "foto membro CPA",
-        name: "Artur Fernandes de Mattos",
+        name: "Artur Fernandes",
         membroID: "#membro8"
     },
     {
         imgSrc: "../assets/membrosCPA/Nicolas.jpg",
         alt: "foto membro CPA",
-        name: "Nicolas Gabriel Battisti Dias",
+        name: "Nicolas Gabriel",
         membroID: "#membro9"
     },
     {
@@ -156,6 +156,10 @@ function createMemberElement(member) {
     img.src = member.imgSrc;
     img.alt = member.alt;
 
+    const infoMembros = document.createElement("div");
+
+    infoMembros.classList.add("infoMembros");
+
     const p = document.createElement("p");
     p.textContent = member.name;
 
@@ -167,8 +171,9 @@ function createMemberElement(member) {
 
     cardMembros.appendChild(memberDiv);
     memberDiv.appendChild(img);
-    memberDiv.appendChild(p);
-    memberDiv.appendChild(button);
+    memberDiv.appendChild(infoMembros);
+    infoMembros.appendChild(p);
+    infoMembros.appendChild(button);
 
 }
 
@@ -276,6 +281,6 @@ document.addEventListener('click', function (event) {
     if (!menuIcon.contains(event.target)) {
         // Clicked outside of the menu, handle the event here
         // For example, you can close the menu or perform any other action
-        toggleMenu(menuContainer);
+        menuContainer.classList.remove('open');
     }
 });
