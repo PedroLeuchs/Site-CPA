@@ -144,6 +144,60 @@ const cardObjects = [
     }
 ];
 
+/*
+    Objeto com dados para div Sobre
+*/
+const sobre = {
+    titulo: 'O que é a CPA?',
+    texto: "A Comissão Própria de Avaliação (CPA) é um setor constituído em todas as Instituições de Ensino Superior (IES), em cumprimento à Lei nº 10.861/2004, que instituiu o Sistema Nacional de Avaliação do Ensino Superior (SINAES). A Comissão Própria de Avaliação(CPA) é formada por professores, alunos, técnicos- administrativos e representantes da sociedade civil organizada, com o objetivo de coordenar os processos de avaliação internos da instituição e sistematização dos dados solicitados pelo Instituto Nacional de Estudos e Pesquisas Educacionais. Anísio Teixeira(INEP), órgão vinculado ao Ministério da Educação. A CPA realiza anualmente o levantamento de informações através da aplicação do instrumento (questionário) de Avaliação Institucional via sistema on-line com toda a comunidade acadêmica (docentes, discentes e técnicos-administrativos) no intuito de conhecer suas opiniões e demandas, tendo como objetivo implantar a melhoria contínua na Faculdade, nos cursos e seus programas, nas dimensões de ensino, pesquisa, extensão, gestão e formação, além de promover a melhoria da qualidade da educação superior e responsabilidade social da Instituição. Destaca-se que a Avaliação Institucional (Interna - questionários aplicados on-line) realizada pela CPA serve de subsídios para o reconhecimento, credenciamento e recredenciamento de cursos e Instituições de Ensino Superior (IES), ou seja, serve para a Avaliação de Cursos de Graduação (Externa - feita pelos avaliadores do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira - INEP), e que juntamente com o Exame Nacional de Avaliação dos Estudantes (ENADE) formam o Sistema Nacional de Avaliação da Educação Superior (SINAES), constituindo dentre outros o Índice de Curso de Graduação (IGC), conhecido como nota ou conceito do curso."
+};
+
+/*
+    Objetos com dados para a div Objetivos
+*/
+const divObjetivos =
+{
+    titulo: 'Quais os objetivos da CPA?',
+    arrayObjetivos: [
+        {
+            objetivo: "Coordenar os processos de avaliação internos da instituição;",
+        },
+        {
+            objetivo: "Elaborar, implementar e acompanhar o Projeto de Avaliação Interna da Faculdade Biopark;"
+        },
+        {
+            objetivo: "Sensibilizar a comunidade interna da Faculdade Biopark para participar ativamente das ações avaliativas;"
+        },
+        {
+            objetivo: "Sistematizar e prestar as informações solicitadas pelo INEP/ MEC;"
+        },
+        {
+            objetivo: "Promover as ações institucionais necessárias ao cumprimento dos objetivos do SINAES;"
+        },
+        {
+            objetivo: "Conduzir de forma ética os processos de avaliação interna;"
+        },
+        {
+            objetivo: "Garantir um processo de autoavaliação coletivo, contínuo, ético e democrático;"
+        },
+        {
+            objetivo: "Propiciar a reflexão e revisão dos programas, ações e diretrizes de planejamento e desenvolvimento da Instituição;"
+        },
+        {
+            objetivo: "Estimular a cultura da autoavaliação no meio institucional;"
+        },
+        {
+            objetivo: "Colaborar para a transparência da Instituição em todos os níveis;"
+        },
+        {
+            objetivo: "Dimensionar os pontos fortes e fracos, com o intuito de(re)dimensionar e(re)orientar a gestão acadêmica e administrativa;"
+        },
+        {
+            objetivo: "Divulgar para a comunidade acadêmica e sociedade os resultados alcançados."
+        },
+    ]
+}
+
 // Função para criar os primeiros cards dos membros
 function createMemberElement(member) {
 
@@ -252,10 +306,46 @@ function createCard() {
     });
 }
 
+/*
+    função para criar div sobre o que é a cpa
+*/
+function createSobre() {
+    const divSobre = document.querySelector(".sobre");
+    const text = document.createElement("p");
+    text.textContent = sobre.titulo;
+    text.style.fontWeight = "bold";
+    const text2 = document.createElement("p");
+    text2.textContent = sobre.texto;
+    divSobre.appendChild(text);
+    divSobre.appendChild(text2);
+}
+
+/*
+    função para criar div sobre os objetivos da cpa
+*/
+function createObjetivos() {
+    const objetivos = document.querySelector(".objetivos");
+    const text = document.createElement("p");
+    text.textContent = divObjetivos.titulo;
+    text.style.fontWeight = "bold";
+    objetivos.appendChild(text);
+    const lista = document.createElement("ul");
+    divObjetivos.arrayObjetivos.forEach((objetivo) => {
+        const text2 = document.createElement("li");
+        text2.textContent = objetivo.objetivo;
+        lista.appendChild(text2);
+    });
+    objetivos.appendChild(lista);
+}
+
+
+
 // função para renderizar os cards;
 document.addEventListener("DOMContentLoaded", function () {
     createCard();
     createMemberCards();
+    createSobre();
+    createObjetivos();
 });
 
 
@@ -276,7 +366,6 @@ const menuIcon = document.querySelector('.menuIcon');
 const menuContainer = document.querySelector('.menuContainer');
 // Add a click event listener to the document
 document.addEventListener('click', function (event) {
-    console.log(event.target);
     // Check if the clicked element is outside of the menu
     if (!menuIcon.contains(event.target)) {
         // Clicked outside of the menu, handle the event here

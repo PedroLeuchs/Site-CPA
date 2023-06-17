@@ -1,3 +1,8 @@
+function scrollToElement(element) {
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 /*
     Array com os links da navbar
 */
@@ -50,7 +55,7 @@ const navLogos = [
 const menuLinks = [
     {
         link: "#sobre",
-        nome: "Sobre o Biopark",
+        nome: "Sobre a CPA",
     },
     {
         link: "#objetivos",
@@ -82,7 +87,11 @@ function renderMenuLinks(link) {
     const divLink = document.createElement("li");
     const linkA = document.createElement("a");
     divLink.appendChild(linkA);
-    linkA.href = link.link;
+    linkA.addEventListener('click', (event) => {
+        event.preventDefault();
+        const target = document.querySelector(link.link);
+        scrollToElement(target);
+    });
     linkA.textContent = link.nome;
     menu.appendChild(divLink);
 }
@@ -116,7 +125,11 @@ function renderLinks(link) {
     const divLink = document.createElement("div");
     divLink.classList.add("link");
     const linkA = document.createElement("a");
-    linkA.href = link.link;
+    linkA.addEventListener('click', (event) => {
+        event.preventDefault();
+        const target = document.querySelector(link.link);
+        scrollToElement(target);
+    });
     linkA.textContent = link.nome;
     links.appendChild(divLink);
     divLink.appendChild(linkA);
