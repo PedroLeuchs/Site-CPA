@@ -2,9 +2,16 @@
 function scrollToElement(elementId) {
     const element = document.getElementById(elementId);
     if (element) {
+      if (typeof element.scrollIntoView === 'function') {
         element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.log('Smooth scrolling is not supported.');
+        // scrolla até o elemento se smooth scrolling não for suportado
+        const scrollTo = element.offsetTop;
+        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+      }
     }
-}
+  }
 
 // vetor com as informações dos membros da CPA para os primeiros cards
 const membersData = [
@@ -12,61 +19,61 @@ const membersData = [
         imgSrc: "../assets/dani.png",
         alt: "foto membro CPA",
         name: "Daniele Wolfarte",
-        membroID: "#membro1"
+        membroID: "membro1"
     },
     {
         imgSrc: "../assets/membrosCPA/Renato IFPR.jpg",
         alt: "foto membro CPA",
         name: "Renato Guerreiro",
-        membroID: "#membro2"
+        membroID: "membro2"
     },
     {
         imgSrc: "../assets/membrosCPA/Liberato.jpg",
         alt: "foto membro CPA",
         name: "Liberato Brum",
-        membroID: "#membro3"
+        membroID: "membro3"
     },
     {
         imgSrc: "../assets/membrosCPA/Leo.jpg",
         alt: "foto membro CPA",
         name: "Leonardo Garcia",
-        membroID: "#membro4"
+        membroID: "membro4"
     },
     {
         imgSrc: "../assets/membrosCPA/Carin.jpg",
         alt: "foto membro CPA",
         name: "Carin Hahn",
-        membroID: "#membro5"
+        membroID: "membro5"
     },
     {
         imgSrc: "../assets/membrosCPA/Maristela.jpg",
         alt: "foto membro CPA",
         name: "Maristela Bendo",
-        membroID: "#membro6"
+        membroID: "membro6"
     },
     {
         imgSrc: "../assets/membrosCPA/Marlise.jpg",
         alt: "foto membro CPA",
         name: "Franciele",
-        membroID: "#membro7"
+        membroID: "membro7"
     },
     {
         imgSrc: "../assets/membrosCPA/arthur.jpg",
         alt: "foto membro CPA",
         name: "Artur Fernandes",
-        membroID: "#membro8"
+        membroID: "membro8"
     },
     {
         imgSrc: "../assets/membrosCPA/Nicolas.jpg",
         alt: "foto membro CPA",
         name: "Nicolas Gabriel",
-        membroID: "#membro9"
+        membroID: "membro9"
     },
     {
         imgSrc: "../assets/membrosCPA/Tatiane.jpg",
         alt: "foto membro CPA",
         name: "Tatiane Margraf",
-        membroID: "#membro10"
+        membroID: "membro10"
     }
 ];
 
@@ -77,70 +84,70 @@ const cardObjects = [
         cargo: 'Coordenadora da CPA',
         imgSrc: '../assets/dani.png',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro1',
+        membroID: 'membro1',
     },
     {
         nome: 'Renato Guerreiro',
         cargo: 'Representante da Sociedade Civil',
         imgSrc: '../assets/membrosCPA/Renato IFPR.jpg',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro2',
+        membroID: 'membro2',
     },
     {
         nome: 'Liberato Brum Júnior',
         cargo: 'Representante da Sociedade Civil',
         imgSrc: '../assets/membrosCPA/Liberato.jpg',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro3',
+        membroID: 'membro3',
     },
     {
         nome: 'Leonardo Garcia Tampelini',
         cargo: 'Representante do Corpo Docente',
         imgSrc: '../assets/membrosCPA/Leo.jpg',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro4',
+        membroID: 'membro4',
     },
     {
         nome: 'Carin Hahn',
         cargo: 'Representante do Corpo Docente',
         imgSrc: '../assets/membrosCPA/Carin.jpg',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro5',
+        membroID: 'membro5',
     },
     {
         nome: 'Maristela Bendo',
         cargo: 'Representante dos Técnicos-Administrativos',
         imgSrc: '../assets/membrosCPA/Maristela.jpg',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro6',
+        membroID: 'membro6',
     },
     {
         nome: 'Marlise',
         cargo: 'Representante dos Técnicos-Administrativos',
         imgSrc: '../assets/membrosCPA/Marlise.jpg',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro7',
+        membroID: 'membro7',
     },
     {
         nome: 'Artur Fernandes de Mattos',
         cargo: 'Representantes dos Discentes',
         imgSrc: '../assets/membrosCPA/arthur.jpg',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro8',
+        membroID: 'membro8',
     },
     {
         nome: 'Nicolas Gabriel Battisti Dias',
         cargo: 'Representantes dos Discentes',
         imgSrc: '../assets/membrosCPA/Nicolas.jpg',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro9',
+        membroID: 'membro9',
     },
     {
         nome: 'Tatiane Margraf',
         cargo: 'Representantes dos Discentes',
         imgSrc: '../assets/membrosCPA/Tatiane.jpg',
         sobre: 'dolor sit amet consectetur adipisicing elit. Quasi consectetur qui aliquam illum laudantium doloremque consequatur pariatur quasmolestias numquam nam natus doloribus voluptates explicabo, modirecusandae nisi! Odit, velit.Praesentium quaerat ad accusantium,dignissimos et cumque atque officia sequi? Dolorum vitae providentvoluptatem.Autem, rem nihil a perferendis sequi dicta, excepturifacilis qui et amet officiis blanditiis at aliquam? Et quo iste,iure dolorem dignissimos reprehenderit nemo eveniet fuga sequiautem eligendi quia.Delectus provident autem ad quis aliquamtenetur veniam illo deserunt! Repellendus minus porro teneturnesciunt consequuntur! Rem ullam eaque aperiam est laborum',
-        membroID: '#membro10',
+        membroID: 'membro10',
     }
 ];
 
@@ -281,7 +288,7 @@ function createCardElement(card) {
     const button2 = document.createElement("button");
     button2.textContent = "Contato";
     button2.onclick = function () {
-        scrollToElement("#contato");
+        scrollToElement("contato");
     }
 
     const sobre = document.createElement("p");
@@ -370,6 +377,7 @@ document.addEventListener('click', function (event) {
     if (!menuIcon.contains(event.target)) {
         // Clicked outside of the menu, handle the event here
         // For example, you can close the menu or perform any other action
+        menuIcon.classList.remove('change');
         menuContainer.classList.remove('open');
     }
 });

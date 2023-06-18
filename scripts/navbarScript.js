@@ -1,6 +1,15 @@
-function scrollToElement(element) {
+// pega um elemento pelo id e scrolla até ele
+function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
     if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        if (typeof element.scrollIntoView === 'function') {
+            element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            console.log('Smooth scrolling is not supported.');
+            // scrolla até o elemento se smooth scrolling não for suportado
+            const scrollTo = element.offsetTop;
+            window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+        }
     }
 }
 /*
@@ -8,27 +17,27 @@ function scrollToElement(element) {
 */
 const linksNavbar = [
     {
-        link: "#sobre",
+        link: "sobre",
         nome: "Sobre",
     },
     {
-        link: "#objetivos",
+        link: "objetivos",
         nome: "Objetivos",
     },
     {
-        link: "#membros",
+        link: "cardMembros",
         nome: "Membros",
     },
     {
-        link: "#resultados",
+        link: "resultados",
         nome: "Resultados",
     },
     {
-        link: "#faq",
+        link: "faq",
         nome: "FAQ",
     },
     {
-        link: "#legislação",
+        link: "legislação",
         nome: "Legislação",
     },
 ];
@@ -54,30 +63,36 @@ const navLogos = [
 */
 const menuLinks = [
     {
-        link: "#sobre",
+        link: "sobre",
         nome: "Sobre a CPA",
     },
     {
-        link: "#objetivos",
+        link: "objetivos",
         nome: "Objetivos",
     },
     {
-        link: "#membros",
+        link: "cardMembros",
         nome: "Membros da CPA",
     },
     {
-        link: "#resultados",
+        link: "resultados",
         nome: "Resultados",
     },
     {
-        link: "#faq",
+        link: "faq",
         nome: "FAQ",
     },
     {
-        link: "#legislação",
+        link: "legislação",
         nome: "Legislação",
     },
 ];
+
+function toggleMenu(x) {
+    x.classList.toggle("change");
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('open');
+}
 
 /*
     Função para renderizar os links do menu da navbar
@@ -87,13 +102,13 @@ function renderMenuLinks(link) {
     const divLink = document.createElement("li");
     const linkA = document.createElement("a");
     divLink.appendChild(linkA);
-    linkA.addEventListener('click', (event) => {
-        event.preventDefault();
-        const target = document.querySelector(link.link);
-        scrollToElement(target);
-    });
     linkA.textContent = link.nome;
     menu.appendChild(divLink);
+    linkA.addEventListener('click', (event) => {
+        event.preventDefault();
+        scrollToElement(link.link);
+        toggleMenu(document.querySelector('.menuIcon'));
+    });
 }
 
 /*
@@ -114,6 +129,13 @@ function renderLogos(logo) {
     img1.src = logo.imgSrc;
     img1.alt = logo.alt;
     img1.classList.add(logo.class);
+    img1.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
     logos.appendChild(img1);
 }
 
@@ -127,8 +149,7 @@ function renderLinks(link) {
     const linkA = document.createElement("a");
     linkA.addEventListener('click', (event) => {
         event.preventDefault();
-        const target = document.querySelector(link.link);
-        scrollToElement(target);
+        scrollToElement(link.link);
     });
     linkA.textContent = link.nome;
     links.appendChild(divLink);
@@ -160,3 +181,16 @@ document.addEventListener("DOMContentLoaded", function () {
     createLinks();
     createMenuLinks();
 });
+
+const navbar = document.getElementById('navbar');
+const scrollOffset = 100; // Adjust this value to your desired scroll offset
+
+function handleScroll() {
+  if (window.pageYOffset > scrollOffset) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}
+
+window.addEventListener('scroll', handleScroll);

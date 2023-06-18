@@ -1,10 +1,18 @@
 nav {
-  background-color: var(--bg-color);
   width: 100%;
   height: 7em;
   justify-content: center;
   display: flex;
-  z-index: 999;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+  background-color: var(--bg-color);
+}
+
+.scrolled {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
 }
 
 .container {
@@ -77,15 +85,28 @@ nav {
   top: 50%;
   right: 1em;
   transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+}
+
+.menuIcon:hover {
+  opacity:0.9;
+  transition: 0.3s ease;
+  transform: translateY(-50%) scale(1.1);
+  background-color: var(--iron-color);
+}
+
+.menuIcon.change {
+  background-color: var(--iron-color);
 }
 
 .bar1,
 .bar2,
 .bar3 {
-  width: 35px;
+  width: 30px;
   height: 5px;
   background-color: #333;
-  margin: 6px 0;
+  margin: 6px 5px;
   transition: 0.4s;
 }
 
@@ -111,7 +132,7 @@ nav {
   background-color: #f1f1f1;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;;
 }
 
 .menu.open {
@@ -119,10 +140,12 @@ nav {
   display: block;
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 .menuContainer {
   width: 50%;
+  background-color: var(--rhino-color);
 }
 
 .menuContainer li {
@@ -134,7 +157,7 @@ nav {
   align-items: center;
   background-color: var(--rhino-color);
   opacity: 0;
-  transform: translateY(-100px);
+  transform: translateX(-100px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -151,11 +174,65 @@ nav {
 .menuContainer a {
   color: var(--white-color);
   text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.menuContainer a:hover::before{
+  width: 100%;
+}
+
+.menuContainer a::before{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
+  background-color: var(--rhino-color);
+  transition: transform 0.3s ease;
+}
+
+.menuContainer a:hover::after{
+  width: 100%;
+}
+
+.menuContainer.open a {
+  right: 0; 
 }
 
 .menuContainer.open li {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.menuContainer.open li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.menuContainer.open li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.menuContainer.open li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.menuContainer.open li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.menuContainer.open li:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.menuContainer.open li:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+.menuContainer.open li:nth-child(7) {
+  transition-delay: 0.7s;
 }
 
 @media (max-width: 868px){
@@ -168,7 +245,7 @@ nav {
   .menuIcon {
     display: inline-block;
   }
-
+  
   .links {
     display: none;
   }

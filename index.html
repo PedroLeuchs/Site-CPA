@@ -1,105 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/footer.css" />
+    <link rel="stylesheet" href="./style/nav.css" />
+    <title>CPA Biopark</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style/style.css" />
-  <link rel="stylesheet" href="./style/footer.css" />
-  <link rel="stylesheet" href="./style/nav.css" />
-  <title>membros CPA</title>
-</head>
+  <body>
+    <nav id="navbar">
+      <div class="container">
+        <a id=˜home˜ class="logocpa"> </a>
 
-<body>
-  <nav>
-    <div class="container">
-      <a href="#" class="logocpa">
+        <div class="links"></div>
 
-      </a>
+        <div class="menuIcon" id="menuIcon" onclick="toggleMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
 
-      <div class="links">
-
+        <ul class="menu menuContainer"></ul>
       </div>
+    </nav>
 
-      <div class="menuIcon" onclick="toggleMenu(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
+    <main>
+      <div class="sobre" id="sobre"></div>
 
-      <ul class="menu menuContainer">
+      <div class="objetivos" id="objetivos"></div>
 
-      </ul>
-    </div>
-  </nav>
+      <div class="cardMembros" id="cardMembros"></div>
 
-  <main>
+      <div class="cardInfo"></div>
+    </main>
 
-    <div class="sobre" id="sobre">
-
-    </div>
-
-    <div class="objetivos" id="objetivos">
-
-    </div>
-
-    <div class="cardMembros" id="cardMembros">
-
-    </div>
-
-    <div class="cardInfo">
-
-    </div>
-
-  </main>
-
-  <footer>
-    <div class="footer_container">
-      <div class="footer_superior">
-        <div class="footer_contato">
-          <h1>CONTATO</h1>
-          <h5>Dúvidas? Fale conosco</h5>
-          <div class="Footer_email">
-            <img src="https://bpkedu.com.br/wp-content/uploads/2021/08/Vector-1.svg" alt="" class="img_footer" />
-            <p>comercial.educacao@biopark.com.br</p>
+    <footer>
+      <div class="footerContainer">
+        <div class="footerSuperior">
+          <div class="footerContato">
+            <div class="footerContatoHeader">
+              <h2>Contato</h2>
+              <p>Dúvidas? Fale conosco</p>
+            </div>
+            <div class="footerEmail">
+              <img
+                src="https://bpkedu.com.br/wp-content/uploads/2021/08/Vector-1.svg"
+                alt=""
+                class="imgfooter"
+              />
+              <a target="_blank" href="mailto: cpa@bpkedu.com.br "
+                >cpa@bpkedu.com.br</a
+              >
+            </div>
+            <div class="footerWhatsPrincipal">
+              <div class="footerWhats">
+                <img
+                  src="https://bpkedu.com.br/wp-content/uploads/2023/05/whatsapp-1.svg"
+                  alt=""
+                  class="imgfooter"
+                />
+              </div>
+              <div class="footerWhatsDados">
+                <h4>Whatsapp</h4>
+                <a
+                  target="_blank"
+                  href="https://api.whatsapp.com/send?phone=5545991130945"
+                  >(45)99113-0945</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="footerLinks">
+            <ul class="footerList">
+              <li>
+                <a href="#" class="footerMenu">Sobre</a>
+              </li>
+              <li>
+                <a href="#" class="footerMenu">Objetivos</a>
+              </li>
+              <li>
+                <a href="#" class="footerMenu">Membros</a>
+              </li>
+            </ul>
+            <ul class="footerList">
+              <li>
+                <a href="#" class="footerMenu">Resutados</a>
+              </li>
+              <li>
+                <a href="#" class="footerMenu">FAQ</a>
+              </li>
+              <li>
+                <a href="#" class="footerMenu">Legislação</a>
+              </li>
+            </ul>
           </div>
 
-          <div class="Footer_whats">
-            <img src="https://bpkedu.com.br/wp-content/uploads/2023/05/whatsapp-1.svg" alt="" class="img_footer" />
-            <p>whatsapp</p>
+          <div class="footerLocalizacao">
+            <iframe
+              class="footerMapa"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4772.283227539427!2d-53.71034196244546!3d-24.617662870342592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3bd3658fec82d%3A0x9298e43c320c4a86!2zQmlvcGFyayBFZHVjYcOnw6Nv!5e0!3m2!1spt-BR!2sbr!4v1685579413212!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+        <div class="footerInferior">
+          <div class="footerLogo">
+            <img src="./assets/logoBPKedu.png" alt="" />
+          </div>
+
+          <div class="footerResto">
+            <div class="footerSocial">
+              <a target="_blank" href="https://www.instagram.com/bioparkedu/">
+                <img
+                  src="https://bpkedu.com.br/wp-content/uploads/2021/08/iconFooterInstagram-1.svg"
+                  alt=""
+                />
+              </a>
+              <a target="_blank" href="https://www.facebook.com/biopark.edu">
+                <img
+                  src="https://bpkedu.com.br/wp-content/uploads/2021/08/Vector-1-1.svg"
+                  alt=""
+                />
+              </a>
+            </div>
+
+            <div class="footerText">
+              <p>
+                Biopark Educação - Associação De Ensino, Pesquisa e Extensão
+                Biopark
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="footer_inferior">
-        <div class="footer_logo">
-          <img src="./assets/logoBPKedu.png" alt="" />
-        </div>
+    </footer>
 
-        <div class="footer_resto">
-          <div class="footer_social">
-            <a target="_blank" href="https://www.instagram.com/biopark_edu/">
-              <img src="https://bpkedu.com.br/wp-content/uploads/2021/08/iconFooterInstagram-1.svg" alt="" />
-            </a>
-            <a target="_blank" href="https://www.facebook.com/biopark.edu">
-              <img src="https://bpkedu.com.br/wp-content/uploads/2021/08/Vector-1-1.svg" alt="" />
-            </a>
-          </div>
-          <div class="footer_text">
-            <p>
-              Biopark Educação - Associação De Ensino, Pesquisa e Extensão
-              Biopark
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="scroll-to-top" onclick="scrollToTop()"></div>
 
-  </footer>
-
-  <script src="./scripts/mainScript.js"></script>
-  <script src="./scripts/navbarScript.js"></script>
-  <div class="scroll-to-top" onclick="scrollToTop()"></div>
-</body>
-
+    <script src="./scripts/mainScript.js"></script>
+    <script src="./scripts/navbarScript.js"></script>
+  </body>
 </html>
