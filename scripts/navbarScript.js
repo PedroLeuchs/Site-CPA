@@ -1,13 +1,12 @@
 // pega um elemento pelo id e scrolla até ele
 function scrollToElement(elementId) {
     const element = document.getElementById(elementId);
+    const navbar = document.getElementById('navbar');
     if (element) {
+        const navbarHeight = navbar.offsetHeight;
+        console.log(navbarHeight);
         if (typeof element.scrollIntoView === 'function') {
-            element.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            console.log('Smooth scrolling is not supported.');
-            // scrolla até o elemento se smooth scrolling não for suportado
-            const scrollTo = element.offsetTop;
+            const scrollTo = element.offsetTop - navbarHeight;
             window.scrollTo({ top: scrollTo, behavior: 'smooth' });
         }
     }
@@ -16,6 +15,10 @@ function scrollToElement(elementId) {
     Array com os links da navbar
 */
 const linksNavbar = [
+    {
+        link: "noticiasContainer",
+        nome: "Notícias",
+    },
     {
         link: "sobre",
         nome: "Sobre",
@@ -27,6 +30,38 @@ const linksNavbar = [
     {
         link: "cardMembros",
         nome: "Membros",
+    },
+    {
+        link: "resultados",
+        nome: "Resultados",
+    },
+    {
+        link: "faq",
+        nome: "FAQ",
+    },
+    {
+        link: "legislação",
+        nome: "Legislação",
+    },
+];
+
+
+
+/*
+Array com os links do menu do navbar
+*/
+const menuLinks = [
+    {
+        link: "sobre",
+        nome: "Sobre a CPA",
+    },
+    {
+        link: "objetivos",
+        nome: "Objetivos",
+    },
+    {
+        link: "cardMembros",
+        nome: "Membros da CPA",
     },
     {
         link: "resultados",
@@ -55,36 +90,6 @@ const navLogos = [
         imgSrc: "../assets/logoBPK.svg",
         alt: "Logo Biopark",
         class: "logoBPK",
-    },
-];
-
-/*
-    Array com os links do menu do navbar
-*/
-const menuLinks = [
-    {
-        link: "sobre",
-        nome: "Sobre a CPA",
-    },
-    {
-        link: "objetivos",
-        nome: "Objetivos",
-    },
-    {
-        link: "cardMembros",
-        nome: "Membros da CPA",
-    },
-    {
-        link: "resultados",
-        nome: "Resultados",
-    },
-    {
-        link: "faq",
-        nome: "FAQ",
-    },
-    {
-        link: "legislação",
-        nome: "Legislação",
     },
 ];
 
@@ -186,11 +191,11 @@ const navbar = document.getElementById('navbar');
 const scrollOffset = 100; // Adjust this value to your desired scroll offset
 
 function handleScroll() {
-  if (window.pageYOffset > scrollOffset) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+    if (window.scrollY > scrollOffset) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
 }
 
 window.addEventListener('scroll', handleScroll);

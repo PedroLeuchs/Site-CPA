@@ -11,7 +11,35 @@ function scrollToElement(elementId) {
         window.scrollTo({ top: scrollTo, behavior: 'smooth' });
       }
     }
-  }
+}
+  
+const noticiasCPA = [
+    {
+      titulo: "CPA divulga resultados da avaliação institucional",
+      data: "10 de maio de 2023",
+      descricao: "A Comissão Própria de Avaliação (CPA) divulgou hoje os resultados da avaliação institucional referente ao ano de 2022. A pesquisa contou com a participação de docentes, discentes e técnicos-administrativos, que contribuíram com valiosas opiniões e sugestões para a melhoria contínua da nossa instituição de ensino superior."
+    },
+    {
+      titulo: "Nova composição da CPA é eleita para o próximo mandato",
+      data: "27 de abril de 2023",
+      descricao: "Em assembleia realizada ontem, foram eleitos os novos membros da Comissão Própria de Avaliação (CPA) para o mandato de 2023 a 2025. A CPA é composta por representantes do corpo docente, discentes, técnicos-administrativos e da sociedade civil organizada. Agradecemos a todos os candidatos que se disponibilizaram e desejamos sucesso aos eleitos nessa importante missão de avaliação institucional."
+    },
+    {
+      titulo: "CPA promove encontro para discussão dos resultados da avaliação",
+      data: "5 de março de 2023",
+      descricao: "A CPA convida a comunidade acadêmica para um encontro no próximo dia 15, no auditório central, para discutir os resultados da avaliação institucional. Será uma oportunidade de analisar em conjunto os pontos positivos e as áreas que necessitam de melhorias, além de propor ações concretas para aprimorar ainda mais a qualidade do ensino, pesquisa e extensão em nossa instituição."
+    },
+    {
+      titulo: "Participe da avaliação institucional da CPA e contribua com sua opinião",
+      data: "18 de janeiro de 2023",
+      descricao: "Está aberto o período de participação na avaliação institucional promovida pela CPA. A sua opinião é fundamental para conhecermos as demandas e sugestões da comunidade acadêmica, visando o aperfeiçoamento contínuo de nossos cursos e programas. Acesse o questionário online disponível em nosso site e contribua para a construção de uma instituição ainda melhor."
+    },
+    {
+      titulo: "CPA apresenta relatório de autoavaliação à comunidade acadêmica",
+      data: "3 de dezembro de 2022",
+      descricao: "A Comissão Própria de Avaliação (CPA) apresentou, hoje, o relatório de autoavaliação referente ao ano de 2022. O documento abrange diversos aspectos da instituição, como infraestrutura, ensino, pesquisa, extensão e gestão. Agradecemos a todos que participaram desse importante processo e reforçamos nosso compromisso em implementar as melhorias apontadas."
+    }
+  ];
 
 // vetor com as informações dos membros da CPA para os primeiros cards
 const membersData = [
@@ -320,7 +348,6 @@ function createSobre() {
     const divSobre = document.querySelector(".sobre");
     const text = document.createElement("p");
     text.textContent = sobre.titulo;
-    text.style.fontWeight = "bold";
     const text2 = document.createElement("p");
     text2.textContent = sobre.texto;
     divSobre.appendChild(text);

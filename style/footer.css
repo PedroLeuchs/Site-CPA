@@ -154,10 +154,17 @@ footer {
 .footerList {
   cursor: pointer;
   list-style: none;
+  width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px; 
+}
+
+.footerList li {
+ display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footerLocalizacao img, .footerEmail img, .footerWhatsPrincipal img {
@@ -208,7 +215,7 @@ footer {
     margin: 2em;
   }
   .footerList{
-    gap: 0.5em;
+    margin: 1em;
   }
   .footerContatoHeader {
     height: 100px;

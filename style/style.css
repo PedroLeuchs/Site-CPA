@@ -31,6 +31,31 @@ main {
 
 .noticiasContainer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+}
+
+.noticiasContainer h1 {
+  margin: 1.5em 0;
+}
+
+.cardsNoticias {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  place-items: center;
+  margin-top: 1em;
+}
+
+.noticiasFilter {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .cardMembros {
@@ -204,20 +229,33 @@ main {
 
 .sobre {
   display: flex;
-  width: 80%;
-  margin-top: 1em;
-  background-color: #cecfd0;
-  font-size: 16px;
-  line-height: 1.5em;
-  padding: 1em;
-  border: solid 2px #dc0b44;
-  border-radius: 10px;
-  font-family: Arial, sans-serif;
   align-items: center;
   flex-direction: column;
+  
+  width: 60%;
+  margin-top: 1em;
+
+  background-color: var(--rhino-color);
+  color: white;
+  border: solid 2px white;
+  
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+
+  line-height: 1.5em;
+  padding: 2em;
+  border-radius: 10px;
   gap: 1em;
 }
-
+.sobre p:first-child{
+  width: 100%;
+  font-weight: bold;
+  text-align: start;
+}
+.sobre p:last-child{
+  padding: 1em;
+  text-align: justify;
+}
 .objetivos {
   display: flex;
   width: 80%;
@@ -275,6 +313,12 @@ main {
 }
 
 @media (max-width: 425px) {
+  .noticiasContainer h1 {
+    font-size: 1.6em;
+  }
+  .noticiasContainer h2 {
+    font-size: 1.4em;
+  }
   .cardMembros {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
