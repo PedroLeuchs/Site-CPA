@@ -1,18 +1,22 @@
 nav {
   width: 100%;
-  height: 7em;
+  height: 6em;
   justify-content: center;
   display: flex;
   position: sticky;
   top: 0;
   z-index: 9999;
   transition: background-color 0.3s ease;
+  transition: height 0.3s ease;
   background-color: var(--bg-color);
+  padding: 1em 0;
 }
 
 .scrolled {
-  background-color: transparent;
+  background-color: rgba(206, 207, 208, 0.8);
   backdrop-filter: blur(10px);
+  height: 4em;
+  padding: 1em 0;
 }
 
 .container {
@@ -90,7 +94,7 @@ nav {
 }
 
 .menuIcon:hover {
-  opacity:0.9;
+  opacity: 0.9;
   transition: 0.3s ease;
   transform: translateY(-50%) scale(1.1);
   background-color: var(--iron-color);
@@ -132,7 +136,7 @@ nav {
   background-color: #f1f1f1;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 .menu.open {
@@ -178,11 +182,11 @@ nav {
   display: inline-block;
 }
 
-.menuContainer a:hover::before{
+.menuContainer a:hover::before {
   width: 100%;
 }
 
-.menuContainer a::before{
+.menuContainer a::before {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -193,18 +197,18 @@ nav {
   transition: transform 0.3s ease;
 }
 
-.menuContainer a:hover::after{
+.menuContainer a:hover::after {
   width: 100%;
 }
 
 .menuContainer.open a {
-  right: 0; 
+  right: 0;
 }
 
 .menuContainer.open li {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.3s ease, transform 0.3s ease; 
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .menuContainer.open li:nth-child(1) {
@@ -235,7 +239,7 @@ nav {
   transition-delay: 0.7s;
 }
 
-@media (max-width: 868px){
+@media (max-width: 868px) {
   .logoBPK {
     display: none;
   }
@@ -245,7 +249,7 @@ nav {
   .menuIcon {
     display: inline-block;
   }
-  
+
   .links {
     display: none;
   }
