@@ -37,7 +37,6 @@ footer {
 
 .footerContato img {
   width: 50px;
-  
 }
 
 .footerInferior {
@@ -95,34 +94,35 @@ footer {
 
 .footerEmail a {
   margin: 1em;
+  text-decoration: none;
+  color: white;
 }
 
 .footerWhatsPrincipal {
   display: flex;
   justify-content: start;
-  width:100%;
+  width: 100%;
 }
 
 .footerWhats {
   display: flex;
   align-items: center;
   justify-content: start;
- }
+}
 
 .footerWhatsDados {
-  justify-content:start;
+  justify-content: start;
   margin: 1em;
-
 }
 
 .footerWhatsDados a {
+  text-decoration: none;
   color: white;
-} 
+}
 
 .footerWhatsDados h4 {
   margin-bottom: 10px;
 }
-
 
 .footerLocalizacao {
   display: flex;
@@ -133,12 +133,12 @@ footer {
   color: var(--white-color);
 }
 
-.footerMapa{
+.footerMapa {
   width: 80%;
   height: 80%;
 }
 
-.footerLinks{
+.footerLinks {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -148,8 +148,8 @@ footer {
 }
 
 .footerMenu {
-  color:white;
- text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .footerList {
@@ -159,19 +159,20 @@ footer {
   height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px; 
+  grid-gap: 20px;
 }
 
 .footerList li {
- display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.footerLocalizacao img, .footerEmail img, .footerWhatsPrincipal img {
+.footerLocalizacao img,
+.footerEmail img,
+.footerWhatsPrincipal img {
   max-width: 40px;
 }
-
 
 .footerSocial img {
   width: 100%;
@@ -191,22 +192,27 @@ footer {
   display: inline;
 }
 
-
 @media (max-width: 650px) {
   .footerLogo img {
     width: 50%;
   }
-  .footerWhatsDados, .footerEmail a  {
+  .footerWhatsDados,
+  .footerEmail a {
     margin: 0.5em;
   }
 }
 
 @media (max-width: 500px) {
-  .footerSuperior, .footerEmail, .footerWhatsPrincipal, .footerWhatsDados {
+  .footerSuperior,
+  .footerEmail,
+  .footerWhatsPrincipal,
+  .footerWhatsDados {
     flex-direction: column;
     justify-content: space-around;
   }
-  .footerEmail, .footerWhatsPrincipal, .footerWhatsDados {
+  .footerEmail,
+  .footerWhatsPrincipal,
+  .footerWhatsDados {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -215,20 +221,19 @@ footer {
     justify-content: space-around;
     margin: 2em;
   }
-  .footerList{
+  .footerList {
     margin: 1em;
   }
   .footerContatoHeader {
     height: 100px;
-  } 
+  }
   .footerLocalizacao {
     margin-bottom: 2em;
   }
   .footerText p {
-    font-size: .8em;
+    font-size: 0.8em;
   }
   .footerMapa {
     height: 100%;
   }
-
 }
