@@ -401,6 +401,7 @@ function createNoticiaContainer() {
   title.textContent = "Comissão Própria de Avaliação";
   const noticiaFilter = document.createElement("div");
   noticiaFilter.classList.add("noticiasFilter");
+  noticiaFilter.setAttribute("id", "noticiasFilter");
   const noticiaFilterTitle = document.createElement("h2");
   noticiaFilterTitle.textContent = "Últimas notícias";
   const filterIcon = document.createElement("img");

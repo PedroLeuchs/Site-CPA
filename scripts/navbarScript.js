@@ -50,7 +50,7 @@ Array com os links do menu do navbar
 */
 const menuLinks = [
   {
-    link: "noticiasContainer",
+    link: "noticiasFilter",
     nome: "Notícias",
   },
   {
@@ -89,7 +89,7 @@ const navLogos = [
     class: "logoCPA",
   },
   {
-    imgSrc: "../assets/logoBPK.svg",
+    imgSrc: "../assets/logoBPKE.svg",
     alt: "Logo Biopark",
     class: "logoBPK",
   },
