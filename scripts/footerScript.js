@@ -4,7 +4,6 @@ function scrollToElement(elementId) {
     const navbar = document.getElementById('navbar');
     if (element) {
         const navbarHeight = navbar.offsetHeight;
-        console.log(navbarHeight);
         if (typeof element.scrollIntoView === 'function') {
             const scrollTo = element.offsetTop - navbarHeight;
             window.scrollTo({ top: scrollTo, behavior: 'smooth' });

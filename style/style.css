@@ -1,5 +1,6 @@
 * {
   --rhino-color: #243746;
+  --rhino-color-white: rgb(44, 70, 91);
   --bg-color: white;
   --red-ribbon-color: #dc0b44;
   --white-color: white;
@@ -18,7 +19,7 @@ body {
   align-items: center;
   background-image: url("../assets/fundo.png");
   background-position: center;
-  background-color: var(--rhino-color);
+  background-color: var(--rhino-color-white);
 }
 
 main {
@@ -27,6 +28,8 @@ main {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  margin: 1em 0;
+  gap: 20em 0;
 }
 
 .noticiasContainer {
@@ -39,7 +42,12 @@ main {
 }
 
 .noticiasContainer h1 {
+  font-size: 50px;
   margin: 1.5em 0;
+  padding: 0.5em 1em ;
+  border: solid 2px white;
+  border-radius: 10px;
+  background-color: var(--rhino-color);
 }
 
 .cardsNoticias {
@@ -49,6 +57,94 @@ main {
   gap: 2em;
   place-items: center;
   margin-top: 1em;
+}
+
+.cardsNoticias img {
+  width: 100%;
+  height: 300px;
+  max-height: 360px;
+  border-radius: 15px;
+}
+
+.noticia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+  width: 80%;
+  min-height: 450px;
+  border: 2px solid black;
+  border-radius: 15px;
+  text-align: center;
+  background-color: var(--rhino-color);
+  padding: 0 0 1em 0;
+}
+
+.noticia h3 {
+  font-size: 16px;
+  margin: 0.5em 0;
+  font-weight: 400;
+  width: 200px;
+}
+
+.noticia button {
+  border-radius: 15px;
+  width: 10em;
+  height: 2.5em;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  border: 2px solid var(--rhino-color);
+  background-color: var(--red-ribbon-color);
+}
+
+.noticiaCard {
+  width: 80%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--white-color);
+  background-color: var(--rhino-color);
+  border: 2px solid #000000;
+  border-radius: 15px;
+}
+
+.noticiaDisplayNone {
+  display: none;
+}
+
+.noticiaCard img {
+  width: 80%;
+  height: 50%;
+  border-radius: 15px;
+}
+
+.noticiaCard button {
+  border-radius: 15px;
+  width: 10em;
+  height: 2.5em;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  border: 2px solid var(--rhino-color);
+  background-color: var(--red-ribbon-color);
+}
+
+.noticiaCard p, .noticiaCard h3 {
+  width: 80%;
+  text-align: center;
+  justify-items: center;
+}
+
+.filtro {
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
 }
 
 .noticiasFilter {
@@ -134,7 +230,7 @@ main {
 
 .cardInfo {
   width: 90%;
-  min-height: 600em;
+  min-height: 500em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -182,10 +278,12 @@ main {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  font-size: 20px;
+
 }
 
 .info :nth-child(2) {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -207,6 +305,8 @@ main {
 
 .bottom p {
   width: 90%;
+  font-size: 18px;
+  text-align: justify;
 }
 
 .buttons {
@@ -227,35 +327,58 @@ main {
   background-color: var(--red-ribbon-color);
 }
 
-.sobre {
+.cardTexto {
   display: flex;
   align-items: center;
   flex-direction: column;
-  
   width: 60%;
   margin-top: 1em;
-
   background-color: var(--rhino-color);
   color: white;
   border: solid 2px white;
-  
   font-size: 16px;
   font-family: Arial, sans-serif;
-
   line-height: 1.5em;
   padding: 2em;
   border-radius: 10px;
   gap: 1em;
 }
-.sobre p:first-child{
+
+
+.cardTexto p:first-child {
   width: 100%;
   font-weight: bold;
   text-align: start;
 }
-.sobre p:last-child{
+
+.cardTexto p {
   padding: 1em;
   text-align: justify;
 }
+
+.resultados {
+  display: flex;
+  width: 60%;
+  margin-top: 1em;
+  background-color: var(--rhino-color);
+  color: var(--iron-color);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid white;
+  border-radius: 10px;
+  gap: 1em;
+  padding: 2em;
+}
+
+.resultados button {
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  height: 50px;
+  cursor: pointer;
+}
+
 .objetivos {
   display: flex;
   width: 80%;
@@ -316,9 +439,11 @@ main {
   .noticiasContainer h1 {
     font-size: 1.6em;
   }
+
   .noticiasContainer h2 {
     font-size: 1.4em;
   }
+
   .cardMembros {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
@@ -353,6 +478,12 @@ main {
   .buttons button {
     width: 40%;
     height: 2em;
+    font-size: 14px;
+  }
+  .noticiaCard  {
+    height: 600px;
+  }
+  .noticiaCard p {
     font-size: 14px;
   }
 }

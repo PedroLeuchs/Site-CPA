@@ -40,7 +40,7 @@ const linksNavbar = [
         nome: "FAQ",
     },
     {
-        link: "legislação",
+        link: "legislacao",
         nome: "Legislação",
     },
 ];
@@ -72,7 +72,7 @@ const menuLinks = [
         nome: "FAQ",
     },
     {
-        link: "legislação",
+        link: "legislacao",
         nome: "Legislação",
     },
 ];

@@ -129,12 +129,13 @@ footer {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100%;
   color: var(--white-color);
 }
 
 .footerMapa{
   width: 80%;
-  height: 150px;
+  height: 80%;
 }
 
 .footerLinks{
@@ -225,6 +226,9 @@ footer {
   }
   .footerText p {
     font-size: .8em;
+  }
+  .footerMapa {
+    height: 100%;
   }
 
 }
