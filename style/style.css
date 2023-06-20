@@ -99,6 +99,16 @@ main {
   border: 2px solid var(--rhino-color);
   background-color: var(--red-ribbon-color);
 }
+.noticia button:hover {
+  color: var(--iron-color);
+  background-color: var(--rhino-color);
+  border-color: var(--red-ribbon-color);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.noticia button:not(:hover) {
+  transition: ease-in 0.2s;
+}
 
 .noticiaCard {
   width: 80%;
@@ -134,6 +144,27 @@ main {
   cursor: pointer;
   border: 2px solid var(--rhino-color);
   background-color: var(--red-ribbon-color);
+}
+
+.noticiaCard button {
+  border-radius: 15px;
+  width: 10em;
+  height: 2.5em;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  border: 2px solid var(--rhino-color);
+  background-color: var(--red-ribbon-color);
+}
+.noticiaCard button:hover {
+  color: var(--iron-color);
+  background-color: var(--rhino-color);
+  border-color: var(--red-ribbon-color);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.noticiaCard button:not(:hover) {
+  transition: ease-in 0.2s;
 }
 
 .noticiaCard p,
